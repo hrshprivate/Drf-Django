@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+{% block title %}
+Смена пароля
+{% endblock %}
+{% load static %}
+{% block content %}
+    <div class="container">
+ <div class="row">
+
+ <div class="col-md-offset-3 col-md-6">
+ <form class="form-horizontal" method="post">{% csrf_token %}
+ <span class="heading">Смена пароля</span>
+ <div class="form-group">
+ <input type="password" name="old_password" class="form-control" id="inputOldPassword" placeholder="Old password..">
+ <i class="fa fa-lock"></i>
+ </div>
+ <div class="form-group help">
+ <input type="password" class="form-control" name="new_password1" id="inputNewOnePassword" placeholder="New password..">
+ <i class="fa fa-lock"></i>
+ <a href="#" class="fa fa-question-circle"></a>
+ </div>
+      <div class="form-group help">
+ <input type="password" class="form-control" name="new_password2" id="inputNewTwoPassword" placeholder="Confirm password..">
+ <i class="fa fa-lock"></i>
+ <a href="#" class="fa fa-question-circle"></a>
+ </div>
+    {% include 'includes/error.html' %}
+ <button type="submit" class="btn btn-default"> Смена пароля </button>
+ </form>
+ </div>
+ </div>
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'main/base.html' %}
+{% block title %}
+Регистрация
+{% endblock %}
+{% load static %}
+{% block content %}
+    <div class="container">
+ <div class="row">
+
+ <div class="col-md-offset-3 col-md-6">
+ <form class="form-horizontal" enctype="multipart/form-data" method="post">{% csrf_token %}
+ <span class="heading">Регистрация</span>
+ <div class="form-group">
+ <input type="text" name="username" class="form-control" id="username" placeholder="username">
+ <i class="fa fa-user"></i>
+ </div>
+      <div class="form-group">
+ <input type="email" name="email" class="form-control" id="inputEmail" placeholder="email">
+ <i class="fa fa-user"></i>
+ </div>
+      <div class="form-group">
+ <input type="text" name="fio" class="form-control" id="fio" placeholder="fio">
+ <i class="fa fa-user"></i>
+ </div>
+      <div class="form-group">
+ <select name="gender" id="id_gender" class="form-control">
+     <option value="" selected="">-------</option>
+  <option value="m">Мужчина</option>
+  <option value="f">Женщина</option>
+</select>
+ <i class="fa fa-user"></i>
+ </div>
+     <div class="form-group">
+ <input type="date" name="birth_date" class="form-control" id="date" placeholder="date">
+ <i class="fa fa-user"></i>
+ </div>
+ <div class="form-group help">
+ <input type="password" class="form-control" name="password1" id="inputPassword" placeholder="Password">
+ <i class="fa fa-lock"></i>
+ </div>
+      <div class="form-group help">
+ <input type="password" class="form-control" name="password2" id="inputPassword" placeholder="Confirm Password">
+ <i class="fa fa-lock"></i>
+ </div>
+     <div class="form-group">
+ {{ form.image }}
+ </div>
+ <div class="form-group">
+     <a href="{% url 'login' %}">Login</a>
+ </div>
+
+
+    {% include 'includes/error.html' %}
+
+     <button type="submit" class="btn btn-default">РЕГИСТРАЦИЯ</button>
+ </form>
+ </div>
+
+ </div>
+</div>
+{% endblock %}

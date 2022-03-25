@@ -1,0 +1,224 @@
+{% extends 'main/base.html' %}
+{% block title %}
+Главная страница
+{% endblock %}
+{% load static %}
+{% block content %}
+        <div id="menu-item" class="menu-item hide-menu">
+            <div class="container">
+                <ul>
+                    <a href="{% url 'home' %}"><li>home</li></a>
+                    <a href="#about"><li>about</li></a>
+                    <a href="#expertise"><li>django</li></a>
+                    <a href="#contact"><li>contact</li></a>
+                    <a href="{% url 'login' %}"><li>login</li></a>
+                </ul>
+            </div>
+        </div>
+        <div class="main">
+            <header class="bg-img header">
+                <nav class="navbar navbar-default navbar-vira">
+                    <div class="container">
+                        <div class="navigation-bar">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="logo">
+                                        <a href="{% url 'home' %}"><span class="fa fa-viacoin"></span></a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div class="menu m">
+                                        <a href="#"><span class="ion-navicon _ion-android-menu"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <div class="container">
+                    <div class="row">
+                        <div class="intro-box">
+                            <div class="intro">
+                                <h1>Django + neural networks</h1>
+                                <p>Face recognition helper</p>
+                                <a class="btn vira-btn" target="_blank" href="https://vk.com/z.doroshuk">Follow to me in vk</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <section id="about" class="about section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <h2 class="title">About lab</h2>
+                            <p>
+                                 You need to organize an entrance to the site with your face.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="purpose section">
+                <div class="container">
+                    <h2 class="title">Lab tasks</h2>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="vira-card">
+                                <div class="vira-card-header">
+                                    <div class="card-icon">
+                                        <span class="fa fa-diamond" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="vira-card-content">
+                                    <h3>Neural networks</h3>
+                                    <p>
+                                        Write a face recognition script.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="vira-card">
+                                <div class="vira-card-header">
+                                    <div class="card-icon">
+                                        <span class="fa fa-cogs" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="vira-card-content">
+                                    <h3>HTML/CSS</h3>
+                                    <p>
+                                        Write or modify layout template.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="vira-card">
+                                <div class="vira-card-header">
+                                    <div class="card-icon">
+                                        <span class="fa fa-bicycle" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="vira-card-content">
+                                    <h3>Backend</h3>
+                                    <p>
+                                        Associate neural networks with layout and backend.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="expertise" class="expert">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6 bg-img">
+                            <div></div>
+                        </div>
+                        <div class="col-sm-5 section">
+                            <h2 class="title">Backend Family</h2>
+                            <div id="expert-slider" class="owl-carousel">
+                                <div class="item">
+                                    <p>
+                                        Beginner backend developer.
+                                    </p>
+                                </div>
+                                <div class="item">
+                                    <p>
+
+                                        Extension of the standard user model.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <br>
+            <br>
+            <section class="subscribe section bg-img">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p>Subscribe to our newsletter to get update</p>
+                            <form action="{% url 'mail' %}" class="form-inline" method="post">{% csrf_token %}
+                                <div class="form-group">
+                                    <input type="email" name="email_user" class="form-control" id="user-email" placeholder="Write your email here....">
+                                </div>
+                                 {% if request.user.is_authenticated %}
+                                <button type="submit" class="btn vira-btn">Send me</button>
+                                {% else %}
+                                <button type="submit" hidden class="btn vira-btn">Send me</button>
+                                {% endif %}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="contact section">
+                <div class="container">
+                    <h2 class="title">Drop us a line</h2>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="vira-card">
+                                <div class="vira-card-header">
+                                        <span class="fa fa-map-o" aria-hidden="true"></span>
+                                </div>
+                                <div class="vira-card-content">
+                                    <h3>Address</h3>
+                                    <p>
+                                        www.bstu.by
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="vira-card">
+                                <div class="vira-card-header">
+                                        <span class="fa fa-phone" aria-hidden="true"></span>
+                                </div>
+                                <div class="vira-card-content">
+                                    <h3>Phone</h3>
+                                    <p>
+                                        +375295049012
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="vira-card">
+                                <div class="vira-card-header">
+                                        <span class="fa fa-paper-plane" aria-hidden="true"></span>
+                                </div>
+                                <div class="vira-card-content">
+                                    <h3>Email</h3>
+                                    <p>
+                                        lollololol686@gmail.com
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p> Love with <span class="fa fa-heart"></span> by <a target="_blank" href="https://github.com/hrshprivate?tab=repositories">Doroshuk</a></p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script src="{% static 'main/assets/js/jquery-3.1.1.js' %}"></script>
+        <script src="{% static 'main/assets/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'main/assets/js/owl.carousel.min.js' %}"></script>
+        <script src="https://use.fontawesome.com/55b73bf748.js"></script>
+        <script src="{% static 'main/assets/js/jquery.magnific-popup.js' %}"></script>
+        <script src="{% static 'main/assets/js/script.js' %}"></script>
+{% endblock %}

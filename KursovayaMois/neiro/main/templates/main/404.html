@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cool 404 Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="{% static 'main/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href='//fonts.googleapis.com/css?family=Viga' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="main">
+		<div class="nav_w3l">
+			<ul>
+			</ul>
+		</div>
+		<h1>404</h1>
+		<h2>ooops, something goes wrong</h2>
+		<div class="more_w3ls">
+			<a href="{% url 'login' %}">Try Once Again</a>
+		</div>
+      <div class="copyright">
+			<p>© Problems with connections: --> <a href="https://t.me/horsh1337">Doroshuk</a></p>
+		</div>
+	</div>
+</body>
+</html>

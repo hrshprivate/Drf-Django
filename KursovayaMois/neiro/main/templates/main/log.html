@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+{% block title %}
+Авторизация
+{% endblock %}
+{% load static %}
+{% block content %}
+    <div class="container">
+ <div class="row">
+ <div class="col-md-offset-3 col-md-6">
+ <form class="form-horizontal" method="post">{% csrf_token %}
+ <span class="heading">АВТОРИЗАЦИЯ</span>
+ <div class="form-group">
+ <input type="text" name="username" class="form-control" id="inputEmail" placeholder="Login">
+ <i class="fa fa-user"></i>
+ </div>
+ <div class="form-group help">
+ <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password">
+ <i class="fa fa-lock"></i>
+ <a href="#" class="fa fa-question-circle"></a>
+ </div>
+ <div class="form-group">
+     <a href="{% url 'signup' %}">Register</a>
+ </div>
+{% include 'includes/error.html' %}
+ <button type="submit" class="btn btn-default">ВХОД</button>
+
+ </form>
+ </div>
+ </div>
+</div>
+{% endblock %}
